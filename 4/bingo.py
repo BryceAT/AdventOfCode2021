@@ -4,17 +4,13 @@ with open('input.txt') as f:
 nums = [int(x) for x in data.pop(0).split(',')]
 
 def get_board() -> 'list[list[int]]':
-    'throw error when done'
     b = []
-    try:
-        data.pop(0) #blank
-        for _ in range(5):
-            b.append([int(x) for x in data.pop(0).split()])
-    except:
-        raise Exception('No more to parse')
+    data.pop(0) #blank
+    for _ in range(5):
+        b.append([int(x) for x in data.pop(0).split()])
     return b
 
-def score(b:'board: list[list[int]]') -> int:
+def score(b:'board: list[list[int]]') -> 'moves,score':
     for ct,n in enumerate(nums):
         for r,row in enumerate(b):
             for c,x in enumerate(row):
@@ -25,11 +21,8 @@ def score(b:'board: list[list[int]]') -> int:
     return 0,None
 
 boards = []
-while True:
-    try:
-        boards.append(get_board())
-    except:
-        break
+while data:
+    boards.append(get_board())
 
 scores = [score(b) for b in boards]
 min_time = min([s[0] for s in scores])
