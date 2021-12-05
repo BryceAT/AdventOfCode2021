@@ -4,8 +4,9 @@ with open('input.txt') as f:
 
 
 class Visited:
-    visited = defaultdict(int)
-    ct = 0
+    def __init__(self):
+        self.visited = defaultdict(int)
+        self.ct = 0
     def visit(self,x,y) -> None:
         self.visited[x,y] += 1
         if self.visited[x,y] == 2:
