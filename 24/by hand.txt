@@ -1,0 +1,252 @@
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 14
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 12
+mul y x
+add z y
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 15
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 7
+mul y x
+add z y
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 12
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 1
+mul y x
+add z y
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 11
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 2
+mul y x
+add z y
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -5
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 4
+mul y x
+add z y
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 14
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 15
+mul y x
+add z y
+inp w
+mul x 0
+add x z
+mod x 26
+div z 1
+add x 15
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 11
+mul y x
+add z y
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -13
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 5
+mul y x
+add z y
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -16
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 3
+mul y x
+add z y
+inp w
+mul x 0
+add x z
+mod x 26
+div z 26
+add x -8
+eql x w
+eql x 0
+mul y 0
+add y 25
+mul y x
+add y 1
+mul z y
+mul y 0
+add y w
+add y 9
+mul y x
+add z y
+inp w		w,x,y									,z
+mul x 0		w,0,y									,z
+add x z		w,z,y									,z
+mod x 26	w,z%26,y								,z
+div z 1		w,z%26,y								,z//1
+add x 15	w,z%26 +15,y							,z//1
+eql x w		w,w==(z%26 +15),y						,z//1
+eql x 0		w,w!=(z%26 +15),y						,z//1
+mul y 0		w,w!=(z%26 +15),0						,z//1
+add y 25	w,w!=(z%26 +15),25						,z//1
+mul y x		w,w!=(z%26 +15),25(w!=(z%26 +15))		,z//1
+add y 1		w,w!=(z%26 +15),(25(w!=(z%26 +15))) +1	,z//1
+mul z y		w,w!=(z%26 +15),(25(w!=(z%26 +15))) +1	,(z//1)((25(w!=(z%26 +15))) +1)
+mul y 0		w,w!=(z%26 +15),0						,(z//1)((25(w!=(z%26 +15))) +1)
+add y w		w,w!=(z%26 +15),w						,(z//1)((25(w!=(z%26 +15))) +1)
+add y 2		w,w!=(z%26 +15),w+2						,(z//1)((25(w!=(z%26 +15))) +1)
+mul y x		w,w!=(z%26 +15),(w+2)(w!=(z%26 +15))	,(z//1)((25(w!=(z%26 +15))) +1)
+add z y		w,w!=(z%26 +15),(w+2)(w!=(z%26 +15))	,(z//1)((25(w!=(z%26 +15))) +1) + (w+2)(w!=(z%26 +15))
+inp w		w,x,y									,z
+mul x 0		w,0,y									,z
+add x z		w,z,y									,z
+mod x 26	w,z%26,y								,z
+div z 26	w,z%26,y								,z//26
+add x -8	w,z%26 -8,y								,z//26
+eql x w		w,w==(z%26 -8),y						,z//26
+eql x 0		w,w!=(z%26 -8),y						,z//26
+mul y 0		w,w!=(z%26 -8),0						,z//26
+add y 25	w,w!=(z%26 -8),25						,z//26
+mul y x		w,w!=(z%26 -8),25(w!=(z%26 -8))			,z//26
+add y 1		w,w!=(z%26 -8),(25(w!=(z%26 -8))) +1	,z//26
+mul z y		w,w!=(z%26 -8),(25(w!=(z%26 -8))) +1	,(z//26)((25(w!=(z%26 -8))) +1)
+mul y 0		w,w!=(z%26 -8),0						,(z//26)((25(w!=(z%26 -8))) +1)
+add y w		w,w!=(z%26 -8),w						,(z//26)((25(w!=(z%26 -8))) +1)
+add y 3		w,w!=(z%26 -8),w+3						,(z//26)((25(w!=(z%26 -8))) +1)
+mul y x		w,w!=(z%26 -8),(w+3)(w!=(z%26 -8))		,(z//26)((25(w!=(z%26 -8))) +1)
+add z y		w,w!=(z%26 -8),(w+3)(w!=(z%26 -8))		,(z//26)((25(w!=(z%26 -8))) +1) + (w+3)(w!=(z%26 -8))
+inp w		w,x,y									,z
+mul x 0		w,0,y									,z
+add x z		w,z,y									,z
+mod x 26	w,z%26,y								,z
+div z 26	w,z%26,y								,z//26
+add x 0		w,z%26,y								,z//26
+eql x w 	w,w==(z%26),y							,z//26
+eql x 0		w,w!=(z%26),y							,z//26
+mul y 0		w,w!=(z%26),0							,z//26
+add y 25	w,w!=(z%26),25							,z//26
+mul y x		w,w!=(z%26),25(w!=(z%26))				,z//26
+add y 1		w,w!=(z%26),(25(w!=(z%26))) +1			,z//26
+mul z y		w,w!=(z%26),(25(w!=(z%26))) +1			,(z//26)((25(w!=(z%26))) +1)
+mul y 0		w,w!=(z%26),0							,(z//26)((25(w!=(z%26))) +1)
+add y w		w,w!=(z%26),w							,(z//26)((25(w!=(z%26))) +1)
+add y 3		w,w!=(z%26),w+3							,(z//26)((25(w!=(z%26))) +1)
+mul y x		w,w!=(z%26),(w+3)(w!=(z%26))			,(z//26)((25(w!=(z%26))) +1)
+add z y		w,w!=(z%26),(w+3)(w!=(z%26))			,(z//26)((25(w!=(z%26))) +1) + (w+3)(w!=(z%26))
+inp w		w,x,y									,z
+mul x 0		w,0,y									,z
+add x z		w,z,y									,z
+mod x 26	w,z%26,y								,z 
+div z 26	w,z%26,y								,z//26
+add x -4	w,z%26 - 4,y							,z//26	
+eql x w		w,w==(z%26 - 4),y						,z//26
+eql x 0		w,w!=(z%26 - 4),y						,z//26
+mul y 0		w,w!=(z%26 - 4),0						,z//26
+add y 25	w,w!=(z%26 - 4),25						,z//26	
+mul y x		w,w!=(z%26 - 4),25(w!=(z%26 - 4))		,z//26
+add y 1		w,w!=(z%26 - 4),25(w!=(z%26 - 4)) +1	,z//26
+mul z y		w,w!=(z%26 - 4),25(w!=(z%26 - 4)) +1	,25(z//26)((w!=(z%26 - 4)) +1)
+mul y 0		w,w!=(z%26 - 4),0						,25(z//26)((w!=(z%26 - 4)) +1)
+add y w		w,w!=(z%26 - 4),w						,25(z//26)((w!=(z%26 - 4)) +1)
+add y 11	w,w!=(z%26 - 4),w + 11					,25(z//26)((w!=(z%26 - 4)) +1)
+mul y x		w,w!=(z%26 - 4),(w + 11)(w!=(z%26 - 4))	,25(z//26)((w!=(z%26 - 4)) +1)
+add z y		w,w!=(z%26 - 4),(w + 11)(w!=(z%26 - 4))	,25(z//26)((w!=(z%26 - 4)) +1) + (w + 11)(w!=(z%26 - 4))
