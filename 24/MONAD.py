@@ -319,6 +319,9 @@ print(f"part 1: {''.join([str(x) for x in ds])}")
 ds_min = [min([w for w,z in pos[0]])]
 for block in range(1,12):
     ds_min.append(min([w for w,z in pos[block] if z in [v for k,v in pos[block-1].items() if k[0] == ds_min[block -1]]]))
-
+ds_min.append(min([w for w,z in {(w,z):g(12,w,z)
+                             for w in range(1,10)
+                             for z in (346,347) if g(12,w,z) in out12}]))
+ds_min.append(9) # since g(12,8,346) = 13 
 #[1, 1, 8, 4, 1, 2, 3, 1, 1, 1, 7, 1]
-    
+print(f"part 2: {''.join([str(x) for x in ds_min])}")   
